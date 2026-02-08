@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/AI%20Middleware%20and%20Application-0ea5e9?style=flat-square" />
+  <img src="https://img.shields.io/badge/Track-AI%20Middleware%20and%20Application-0ea5e9?style=flat-square" />
   <img src="https://img.shields.io/badge/Built%20in-24%20hours-f59e0b?style=flat-square" />
   <img src="https://img.shields.io/badge/Lines-5.5K%20custom-8b5cf6?style=flat-square" />
 </p>
