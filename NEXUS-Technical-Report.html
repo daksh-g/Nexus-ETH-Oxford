@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NEXUS Technical Report</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  @page{size:letter;margin:0.28in 0.38in 0.24in 0.38in;}
+  body{font-family:'Inter',sans-serif;font-size:6.1pt;line-height:1.3;color:#0f172a;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .hdr{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid #0f172a;padding-bottom:3pt;margin-bottom:4pt;}
+  .hdr h1{font-size:16pt;font-weight:800;letter-spacing:-0.5pt;line-height:1;}
+  .hdr h1 span{color:#0ea5e9;}
+  .hdr .sub{font-size:7pt;font-weight:500;color:#475569;margin-top:1pt;letter-spacing:0.2pt;}
+  .hdr .rt{text-align:right;font-size:5.5pt;color:#64748b;font-family:'JetBrains Mono',monospace;}
+  h2{font-size:6.5pt;font-weight:700;text-transform:uppercase;letter-spacing:0.8pt;color:#0ea5e9;border-bottom:0.5px solid #e2e8f0;padding-bottom:1.5pt;margin:3.5pt 0 2pt;}
+  h3{font-size:5.9pt;font-weight:700;color:#1e293b;margin-bottom:0.5pt;}
+  p{margin-bottom:1.5pt;}
+  strong{font-weight:600;}
+  .c2{display:grid;grid-template-columns:1fr 1fr;gap:5pt;}
+  .c3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4pt;}
+  .c4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:3pt;}
+  .bx{background:#f8fafc;border:0.5px solid #e2e8f0;border-radius:2pt;padding:2.5pt 3.5pt;}
+  .bx.a{border-left:2px solid #0ea5e9;}
+  .bx.r{border-left:2px solid #ef4444;}
+  .bx.p{border-left:2px solid #8b5cf6;}
+  code{font-family:'JetBrains Mono',monospace;font-size:5.4pt;background:#f1f5f9;padding:0 1.5pt;border-radius:1pt;}
+  .lp{display:flex;align-items:center;justify-content:center;margin:2.5pt 0 1pt;gap:0;}
+  .ls{background:#0f172a;color:#fff;font-family:'JetBrains Mono',monospace;font-size:5.2pt;font-weight:600;padding:2pt 4pt;border-radius:2pt;white-space:nowrap;}
+  .ls.h{background:#0ea5e9;} .ls.g{background:#22c55e;}
+  .ar{font-size:7pt;color:#94a3b8;margin:0 1.5pt;}
+  table{width:100%;border-collapse:collapse;font-size:5.6pt;margin:1.5pt 0;}
+  th{background:#0f172a;color:#fff;font-weight:600;text-align:left;padding:1.5pt 3pt;font-size:5.2pt;text-transform:uppercase;letter-spacing:0.3pt;}
+  td{padding:1.5pt 3pt;border-bottom:0.5px solid #e2e8f0;}
+  tr:nth-child(even) td{background:#f8fafc;}
+  .fg{display:grid;grid-template-columns:1fr 1fr;gap:1pt 6pt;}
+  .fi{display:flex;align-items:baseline;gap:2pt;}
+  .fd{width:2.5pt;height:2.5pt;border-radius:50%;background:#0ea5e9;flex-shrink:0;margin-top:1.5pt;}
+  .fd.g{background:#22c55e;}.fd.am{background:#f59e0b;}.fd.re{background:#ef4444;}.fd.pu{background:#8b5cf6;}
+  .cl{background:linear-gradient(135deg,#0f172a,#1e3a5f);color:#e2e8f0;border-radius:3pt;padding:3.5pt 5pt;margin-top:3pt;font-size:5.8pt;line-height:1.35;}
+  .cl strong{color:#38bdf8;}
+  .ft{margin-top:2.5pt;padding-top:2pt;border-top:0.5px solid #e2e8f0;font-size:5.2pt;color:#94a3b8;display:flex;justify-content:space-between;}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div>
+    <h1>NEXUS<span>.</span></h1>
+    <div class="sub">Superhuman AI Chief of Staff &mdash; Organizational Nervous System</div>
+  </div>
+  <div class="rt">Hack Nation MIT &middot; Feb 7&ndash;8, 2026<br>OpenAI-Sponsored Track</div>
+</div>
+
+<!-- 1 -->
+<h2>1. Problem Statement</h2>
+<p>Organizations do not fail because they lack information. They fail because information reaches the wrong people, at the wrong time, in the wrong format. Communication complexity grows super-linearly: a 50-person company has 1,225 potential dyadic channels; a 500-person company has 124,750. No human executive can monitor, prioritize, or route across this space. The result: contradictions propagate unchecked ($30K+ per incident), silos duplicate effort (83% code overlap between teams that never communicate), critical signals drown in noise, and cognitive overload concentrates on key individuals until they become single points of failure. Every existing tool&mdash;dashboards, chat, notifications&mdash;optimizes for <em>delivery</em>, not <em>decision correctness</em>. They treat all recipients equally and all information identically. This is the fundamental failure mode.</p>
+
+<!-- 2 -->
+<h2>2. System Overview</h2>
+<p><strong>NEXUS</strong> is an agentic AI system that models how information flows inside an organization and <em>adapts communication routing in real time</em> based on each person's demonstrated preferences, performance, and judgment. It maintains a live knowledge graph of 26+ nodes (people, AI agents), 34+ weighted edges (reporting, delegation, dependency, communication), 7 alert classes, and a 12-version truth ledger. NEXUS does not summarize&mdash;it <strong>reasons</strong>: detecting contradictions, predicting cascade failures, simulating departures, measuring knowledge propagation gaps, and auto-correcting information distribution. It is an organizational nervous system with memory, critique, coordination, and authority routing.</p>
+
+<!-- 3 -->
+<h2>3. Adaptive Intelligence Engine &mdash; Feedback-Driven Learning Loop</h2>
+<div class="c2">
+  <div>
+    <p>NEXUS learns from two signal classes. <strong>Explicit signals:</strong> per-message relevance ratings (useful / not-useful / need-more), correction submissions, manual priority overrides, dismissal patterns, and resolution confirmations. <strong>Implicit signals:</strong> action latency (time from notification to decision), follow-up queries (indicating insufficient context), override frequency (human reversing AI routing), read-but-no-act patterns, and delegation chains (who forwards what to whom).</p>
+    <p>These signals update a <strong>dynamic preference &amp; competence profile</strong> per individual, role, and team. Each profile encodes: information domain affinity (vector), response latency distribution, override rate, cognitive load capacity, trust delegation patterns, and temporal availability windows. Profiles are versioned&mdash;NEXUS tracks <em>how</em> preferences shift over time, not just their current state.</p>
+    <p><strong>Routing actions:</strong> <strong>Amplify</strong>&mdash;increase priority where the individual acts quickly and correctly. <strong>Suppress</strong>&mdash;reduce noise for domains with high dismiss rates. <strong>Reroute</strong>&mdash;redirect to a better-matched recipient by competence fit. <strong>Escalate</strong>&mdash;trigger authority chain when contradiction confidence exceeds threshold or cognitive load exceeds capacity.</p>
+  </div>
+  <div>
+    <div class="bx a">
+      <h3>Objective Functions (explicitly NOT engagement-based)</h3>
+      <table>
+        <tr><th>Objective</th><th>Metric</th><th>Anti-Pattern Avoided</th></tr>
+        <tr><td><strong>Decision correctness</strong></td><td>Contradiction detection rate, resolution time</td><td>Engagement maximization</td></tr>
+        <tr><td><strong>Latency reduction</strong></td><td>Signal-to-action time per node</td><td>Notification volume</td></tr>
+        <tr><td><strong>Cognitive load min.</strong></td><td>Per-person load &lt;75% sustained</td><td>Equal-blast messaging</td></tr>
+        <tr><td><strong>Org alignment</strong></td><td>Truth ledger consistency score</td><td>Attention optimization</td></tr>
+      </table>
+    </div>
+    <div class="lp">
+      <div class="ls">SIGNAL</div><span class="ar">&rarr;</span>
+      <div class="ls">INTERPRET</div><span class="ar">&rarr;</span>
+      <div class="ls h">PROFILE UPDATE</div><span class="ar">&rarr;</span>
+      <div class="ls">ROUTING CHANGE</div><span class="ar">&rarr;</span>
+      <div class="ls">OUTCOME</div><span class="ar">&rarr;</span>
+      <div class="ls g">FEEDBACK</div><span class="ar">&circlearrowleft;</span>
+    </div>
+    <p style="text-align:center;font-size:5pt;color:#64748b;"><em>Figure: Continuous adaptation loop &mdash; every human action refines the organizational routing model. Profiles are versioned; routing changes are auditable.</em></p>
+  </div>
+</div>
+
+<!-- 4 -->
+<h2>4. Agent Architecture</h2>
+<div class="c4">
+  <div class="bx a"><h3>Coordinator</h3><p>Orchestrates the multi-agent pipeline. Receives raw signals (info drops, alerts, feedback), assigns sub-tasks to specialists, enforces sequencing, manages global state, and emits final routing decisions.</p></div>
+  <div class="bx a"><h3>Memory</h3><p>Maintains the versioned truth ledger (12+ snapshots). Retrieves historical context for contradiction validation. Tracks decision provenance and temporal dependencies. Enables "what was true at time T?" queries.</p></div>
+  <div class="bx a"><h3>Critic</h3><p>Validates claims against organizational ground truth. Detects contradictions ($20 vs $15/seat), staleness (deprecated specs), and drift (AI agents on outdated context). Assigns confidence scores per finding.</p></div>
+  <div class="bx a"><h3>Router</h3><p>Executes information delivery. Selects recipients via competence profiles, urgency thresholds, and cognitive load budgets. Manages AI trust levels (autonomous/supervised/review_required). Triggers auto-correction on gaps.</p></div>
+</div>
+<div class="c2" style="margin-top:2pt;">
+  <p>Agents communicate via typed message particles: <code>INGEST &rarr; QUERY &rarr; FOUND &rarr; VALIDATE &rarr; CONFLICT &rarr; ROUTE &rarr; DONE</code>. Every step is observable, auditable, and carries a confidence score. Human-AI edges enforce trust constraints; AI-AI edges show autonomous agent coordination.</p>
+  <div class="bx p"><p><strong>Trust governance:</strong> Each AI agent operates at a dynamic trust level. After the Acme Corp pricing incident, NEXUS automatically downgraded Nova-Sales from <em>supervised</em> to <em>review_required</em>, meaning all automated proposals now require human approval before dispatch. Trust is earned back through consistent performance.</p></div>
+</div>
+
+<!-- 5 -->
+<h2>5. Knowledge Graph &amp; Organizational Memory</h2>
+<div class="c2">
+  <div>
+    <p><strong>Graph structure:</strong> 26 nodes (20 people + 4 AI agents across HQ, NA, EMEA, APAC), 34 weighted directional edges (reporting, communication, delegation, dependency) with interaction-type metadata (human-human, human-AI, AI-AI). Each person carries cognitive load %, role, division, and active workstream tasks. Each AI agent carries a trust level that NEXUS can dynamically upgrade or downgrade based on performance.</p>
+    <p><strong>Versioned truth ledger</strong> (v1&ndash;v12): Every decision, contradiction, escalation, and context update is immutably recorded with author, timestamp, affected nodes, and a diff against the previous version. This enables temporal queries ("What was our pricing commitment on Feb 3?") and cross-time contradiction detection.</p>
+  </div>
+  <div>
+    <p><strong>Conflict detection:</strong> The Critic agent continuously compares incoming signals against the truth ledger. When a new fact contradicts an existing commitment (e.g., $15/seat proposal vs. $20/seat agreement), NEXUS calculates financial exposure, identifies all affected stakeholders, and triggers the Router to escalate with full context. Detected $30K pricing contradiction and $45K duplicated silo in the live demo.</p>
+    <p><strong>Dependency tracking:</strong> Cross-division dependencies are explicitly modeled. NEXUS identifies that removing Catherine Moore (CSO) would stall 6 workstreams across 3 divisions with $2.4M revenue exposure, and that NA Payments and EMEA Billing share 83% code overlap with zero direct communication.</p>
+  </div>
+</div>
+
+<!-- 6 -->
+<h2>6. Tech Stack</h2>
+<div class="c3">
+  <div class="bx"><h3>LLM Layer</h3><p>OpenAI <code>gpt-4o-mini</code> (temp 0.3). Three endpoints: streaming Q&amp;A (<code>askNexus</code>), info classification (<code>classifyInfoDrop</code>), joiner briefing (<code>generateJoinerBrief</code>). 3s timeout with three-tier fallback: pre-cache &rarr; live API &rarr; demo responses. System prompt encodes full organizational graph.</p></div>
+  <div class="bx"><h3>Graph &amp; Visualization</h3><p>Custom Canvas 2D engine at 60fps. Deterministic force-directed layout with seeded positioning. Particle system for information flow animation. BFS-based knowledge propagation simulation. Division-clustered spatial layout. Framer Motion for panel transitions.</p></div>
+  <div class="bx"><h3>Application</h3><p>React 18 + TypeScript + Vite 5. Tailwind CSS + shadcn/ui component library. Web Speech API for voice input. React Router for view navigation. Response caching with pre-warm on mount. 50+ concurrent canvas particles. Three-tier graceful degradation.</p></div>
+</div>
+
+<!-- 7 -->
+<h2>7. Why This Is Fundamentally Different</h2>
+<div class="c2">
+  <div>
+    <p><strong>Dashboards</strong> display state; NEXUS reasons about causality. <strong>Chatbots</strong> answer questions; NEXUS proactively detects contradictions before anyone asks. <strong>Notification systems</strong> broadcast uniformly; NEXUS routes selectively based on competence profiles and cognitive load budgets. <strong>Feeds</strong> optimize for engagement; NEXUS optimizes for decision correctness. The core architectural difference: NEXUS maintains a <em>model of each individual's judgment</em>&mdash;not just their role or permissions&mdash;and uses that model to determine what information they need, when they need it, and in what form. This is not filtering. This is organizational intelligence.</p>
+  </div>
+  <div>
+    <div class="bx r">
+      <p><strong>What existing tools cannot do:</strong> Detect that two people in different divisions made contradictory commitments to the same client. Predict that one executive departure cascades into $2.4M revenue risk across 6 workstreams. Measure that a piece of information reached 21/24 people and auto-correct the 3 gaps with targeted dispatches. Continuously learn that Sarah prefers raw data while Marcus prefers executive summaries&mdash;and route the same insight in different forms accordingly.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<h2>Implemented Features (20)</h2>
+<div class="fg">
+  <div class="fi"><div class="fd"></div><span><strong>Live Organizational Knowledge Graph</strong> &mdash; 26 nodes, 34 edges, 4 divisions, real-time canvas at 60fps</span></div>
+  <div class="fi"><div class="fd"></div><span><strong>Multi-Agent Reasoning Trace</strong> &mdash; 4-agent pipeline with visible step-by-step logic and confidence scores</span></div>
+  <div class="fi"><div class="fd re"></div><span><strong>Contradiction Detection &amp; Resolution</strong> &mdash; $20 vs $15/seat, $30K exposure, auto-escalation</span></div>
+  <div class="fi"><div class="fd am"></div><span><strong>Cognitive Load Monitoring</strong> &mdash; per-person workload tracking, overload alerts at 80%+</span></div>
+  <div class="fi"><div class="fd pu"></div><span><strong>What-If Cascade Simulation</strong> &mdash; departure analysis, $2.4M risk modeling, recovery plan</span></div>
+  <div class="fi"><div class="fd"></div><span><strong>Knowledge Propagation Spread</strong> &mdash; BFS wave simulation, gap detection, unreached-node ID</span></div>
+  <div class="fi"><div class="fd g"></div><span><strong>Auto-Correction Flow</strong> &mdash; targeted email dispatch to unreached nodes, canvas confirmation</span></div>
+  <div class="fi"><div class="fd g"></div><span><strong>Communication Feedback System</strong> &mdash; useful/not-useful/need-more, adaptive re-routing</span></div>
+  <div class="fi"><div class="fd"></div><span><strong>Decision Timeline (Truth Ledger)</strong> &mdash; 12-version immutable history, diffs, conflict markers</span></div>
+  <div class="fi"><div class="fd"></div><span><strong>Smart Info Drop Classification</strong> &mdash; LLM type/urgency/routing with particle visualization</span></div>
+  <div class="fi"><div class="fd g"></div><span><strong>Dynamic New Joiner Briefing</strong> &mdash; personalized onboarding in 5 min vs 3&ndash;6 month avg</span></div>
+  <div class="fi"><div class="fd am"></div><span><strong>Proactive Alert Toasts</strong> &mdash; 3 priority alerts auto-surface on first interaction, actionable CTAs</span></div>
+  <div class="fi"><div class="fd"></div><span><strong>AI Agent Trust Governance</strong> &mdash; autonomous / supervised / review_required, dynamic adjustment</span></div>
+  <div class="fi"><div class="fd"></div><span><strong>Real-Time Org Risk Counter</strong> &mdash; $75.2K baseline &rarr; $2.4M animated during What-If</span></div>
+  <div class="fi"><div class="fd"></div><span><strong>Voice Query Input</strong> &mdash; Web Speech API with feature detection and graceful fallback</span></div>
+  <div class="fi"><div class="fd"></div><span><strong>Streaming Ask NEXUS</strong> &mdash; natural language org queries, pre-cached + live LLM + fallback</span></div>
+  <div class="fi"><div class="fd pu"></div><span><strong>Silo Detection</strong> &mdash; 83% code overlap between NA/EMEA teams, $45K waste quantification</span></div>
+  <div class="fi"><div class="fd"></div><span><strong>"What Changed Today?" Briefing</strong> &mdash; ticker-tape animation, feedback loop, action buttons</span></div>
+  <div class="fi"><div class="fd am"></div><span><strong>Per-Person Active Workstreams</strong> &mdash; 29 tasks across 12 people, status + progress bars</span></div>
+  <div class="fi"><div class="fd"></div><span><strong>Agent Mesh Status Bar</strong> &mdash; live indicator showing which AI agents are actively reasoning</span></div>
+</div>
+
+<!-- CLOSING -->
+<div class="cl">
+  <strong>NEXUS is not a product&mdash;it is a new abstraction: organizational intelligence.</strong> Just as an operating system abstracts hardware into a programmable interface, NEXUS abstracts organizational complexity into a reasoning layer that learns, adapts, and acts. Dashboards show you data. Chatbots answer your questions. NEXUS understands your organization's structure, memory, and judgment&mdash;and rewires communication to optimize for collective decision-making. This abstraction unlocks superhuman problem-solving: not by replacing human judgment, but by ensuring that every human receives exactly the information their judgment requires, exactly when it matters. The organization becomes smarter than any individual within it.
+</div>
+
+<div class="ft">
+  <span>NEXUS &mdash; Organizational Nervous System &middot; React 18 + TypeScript + Vite 5 + OpenAI gpt-4o-mini &middot; 26 nodes &middot; 34 edges &middot; 4 AI agents &middot; 20 features</span>
+  <span>Hack Nation MIT 2026 &middot; OpenAI Track</span>
+</div>
+
+</body>
+</html>
