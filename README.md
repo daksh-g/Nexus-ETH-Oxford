@@ -9,7 +9,6 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Hack%20Nation-MIT%202026-22c55e?style=flat-square" />
   <img src="https://img.shields.io/badge/Track-OpenAI-0ea5e9?style=flat-square" />
   <img src="https://img.shields.io/badge/Built%20in-24%20hours-f59e0b?style=flat-square" />
   <img src="https://img.shields.io/badge/Lines-5.5K%20custom-8b5cf6?style=flat-square" />
@@ -209,10 +208,3 @@ Just as an operating system abstracts hardware into a programmable interface, NE
 This unlocks superhuman problem-solving: not by replacing human judgment, but by ensuring that every human receives exactly the information their judgment requires, exactly when it matters.
 
 The organization becomes smarter than any individual within it.
-
----
-
-<p align="center">
-  <strong>Built at Hack Nation MIT 2026</strong><br>
-  <em>OpenAI-Sponsored Track</em>
-</p>
